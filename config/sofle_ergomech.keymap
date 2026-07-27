@@ -39,8 +39,8 @@ name: name##_macro {                      \
         MACRO(ESC_M,  &kp ESC &kp M)
         MACRO(ESC_Y,  &kp ESC &kp Y)
         MACRO(ESC_C,  &kp ESC &kp C)
-        MACRO(TAB_R,  &kp LA(LGUI) &kp RIGHT)
-        MACRO(TAB_L,  &kp LA(LGUI) &kp LEFT)
+        MACRO(TAB_R,  &kp LC(TAB))
+        MACRO(TAB_L,  &kp LC(LS(TAB)))
         MACRO(SCNSHOT,  &kp LSHFT &kp LGUI &kp S)
         MACRO(vim_q,  &kp COLON &kp Q &kp EXCL)
         MACRO(vim_s,  &kp COLON &kp X)
@@ -92,10 +92,10 @@ name: name##_macro {                      \
 &kp ESC     &kp Q  &kp W       &kp E    &kp R     &kp T                               &kp Y      &kp U     &kp I     &kp O   &kp P     &kp BSPC
 &mo RAISE   &kp A  &kp S       &kp D    &kp F     &kp G                               &kp H      &kp J     &kp K     &kp L   &kp SEMI  &mo LOWER
 &kp LSHFT   &kp Z  &kp X       &kp C    &kp V     &kp B                               &kp N      &kp M     &kp COMMA &kp DOT &kp FSLH  &kp RSHFT
-      &kp C_MUTE   &kp LCTRL   &kp LALT &kp LGUI  &kp RET   &mo LOWER      &mo RAISE  &kp SPACE  &kp RGUI  &kp RALT  &kp RCTRL
+      &kp C_MUTE   &kp LGUI   &kp LALT &kp LCTRL  &kp RET   &mo LOWER      &mo RAISE  &kp SPACE  &kp RCTRL  &kp RALT  &kp  RGUI
                                                                            &mkp LCLK  &mkp MB5  &kp PG_UP &mkp MB4  &kp PG_DN
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
         };
 
         lower_layer {
@@ -105,17 +105,17 @@ name: name##_macro {                      \
 // |   1   |  2    |  3    |  4     |  5    |  6     |                         |        |        |        |      |        |       |
 // |   7   |  8    |  9    |  0     |  -_   |  =+    |                         | END    |   (    |   ^    |   )  |   |    |    `  |
 // | TAB   | ESC_M | ESC_A | ESC_B  | COPY  |  PASTE |                         | BKSPC  |   <-   |   v    |  ->  |   #    |  ' "  |
-// |       | CAPS  |       |        | Undo  | CUT    |       |         |       | HOME   |   [    |   =    |   ]  |   \|   |       |
-//                 |       |        |       | ^ENTER |       |         |  TAB  | LG(>)  | LS(-_) |   -_   |      |
+// |       | CAPS  |  .>   | alt(]) | Undo  | CUT    |       |         |       | HOME   |   [    |   =    |   ]  |   \|   |       |
+//                 |       |        |       | ^ENTER |       |         |  TAB  | LG(>)  | LS(-_) |   ENTER   |      |
             bindings = <
 &kp N1    &kp N2    &kp N3       &kp N4      &kp N5        &kp N6                            &trans        &trans        &trans        &trans    &trans     &trans
 &kp N7    &kp N8    &kp N9       &kp N0      &kp MINUS     &kp EQUAL                         &kp END       &kp LPAR      &kp UP        &kp RPAR  &kp PIPE   &kp GRAVE
-&kp TAB   &ESC_M    &ESC_A       &ESC_B      &kp LG(C)     &kp LG(V)                         &kp BSPC      &kp LEFT      &kp DOWN      &kp RIGHT &kp HASH   &kp SQT
-&trans    &kp CAPS  &trans       &trans      &kp LG(Z)     &kp LG(X)                         &kp HOME      &kp LBKT      &kp EQUAL     &kp RBKT  &kp BSLH   &trans
-          &trans    &trans       &trans      &trans        &kp RS(RET) &trans       &kp TAB  &kp LG(RIGHT) &kp LS(MINUS) &kp MINUS     &trans
+&kp TAB   &ESC_M    &ESC_A       &ESC_B      &kp LC(C)     &kp LC(V)                         &kp BSPC      &kp LEFT      &kp DOWN      &kp RIGHT &kp HASH   &kp SQT
+&trans    &kp CAPS  &kp DOT      &kp RA(RBKT) &kp LC(Z)     &kp LC(X)                         &kp HOME      &kp LBKT      &kp EQUAL     &kp RBKT  &kp BSLH   &trans
+          &trans    &trans       &trans      &trans        &kp RS(RET) &trans       &kp TAB  &kp LC(RIGHT) &kp LS(MINUS) &kp RET       &trans
                                                                                     &mkp LCLK  &mkp MB5  &kp PG_UP &mkp MB4  &kp PG_DN
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
         };
 
         raise_layer {
@@ -123,7 +123,7 @@ name: name##_macro {                      \
 // ------------------------------------------------------------------------------------------------------------
 // |   F1    |  F2     |  F3   |  F4    |  F5   |  F6     |                        |  F7  |  F8  |  F9   |  F10 |  F11  |  F12   |
 // | EXTPWR  |         | LTab  | NEWTAB | RTab  | SCNSHOT |                        | PGUP |      | MOVE_UP |      |       | BTCLR  |
-// |         | LG(`)   | LC(<) | delTAB | LC(>) |         |                        | PGDN | MOVE_LEFT | MOVE_DOWN | MOVE_RIGHT | RCLK | BT1 |
+// |         |         |       | delTAB |        |         |                        | PGDN | MOVE_LEFT | MOVE_DOWN | MOVE_RIGHT | RCLK | BT1 |
 // |         |         |       | newWIN |       |         |      |        |        |      |  {   |   +   |  }   | LCLK | BT2 |
 //                     |       |        |       | ^ENTER  |      |        |        |      |      |       |      |
             bindings = <
@@ -135,7 +135,7 @@ name: name##_macro {                      \
                                                                                             &mkp LCLK  &mkp MB5  &kp PG_UP &mkp MB4  &kp PG_DN
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_DN PG_UP>;
         };
 
 
