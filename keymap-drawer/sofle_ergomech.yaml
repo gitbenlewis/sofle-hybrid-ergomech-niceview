@@ -31,7 +31,7 @@ layers:
   - '&ESC_M'
   - '&ESC_A'
   - '&ESC_B'
-  - Ctl+C
+  - Gui+C
   - Gui+V
   - BSPC
   - LEFT
@@ -41,10 +41,10 @@ layers:
   - {t: '''', type: held}
   - {t: ▽, type: trans}
   - CAPS
-  - .
-  - AltGr+]
-  - Ctl+Z
-  - Ctl+X
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Gui+Z
+  - Gui+X
   - HOME
   - '['
   - '='
@@ -58,9 +58,9 @@ layers:
   - Sft+RET
   - {t: ▽, type: trans}
   - TAB
-  - Ctl+RIGHT
+  - Gui+RIGHT
   - Sft+-
-  - RET
+  - '-'
   - {t: ▽, type: trans}
   - '&mkp LCLK'
   - '&mkp MB5'
