@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: sofle_ergomech}
 layers:
   default: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', ESC, Q, W, E, R, T, Y, U, I, O, P, BSPC, raise, A, S, D, F, G, H, J, K, L, ;, lower, LSHFT,
-    Z, X, C, V, B, N, M, ',', ., /, RSHFT, MUTE, LCTRL, LALT, LGUI, RET, lower, raise, SPACE, RGUI, RALT, RCTRL, '&mkp LCLK', '&mkp MB5', PG UP, '&mkp MB4', PG DN]
+    Z, X, C, V, B, N, M, ',', ., /, RSHFT, MUTE, LGUI, LALT, LCTRL, RET, lower, raise, SPACE, RCTRL, RALT, RGUI, '&mkp LCLK', '&mkp MB5', PG UP, '&mkp MB4', PG DN]
   lower:
   - '1'
   - '2'
@@ -31,8 +31,8 @@ layers:
   - '&ESC_M'
   - '&ESC_A'
   - '&ESC_B'
-  - Gui+C
-  - Gui+V
+  - Ctl+C
+  - Ctl+V
   - BSPC
   - LEFT
   - DOWN
@@ -41,10 +41,10 @@ layers:
   - {t: '''', type: held}
   - {t: ▽, type: trans}
   - CAPS
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - Gui+Z
-  - Gui+X
+  - .
+  - AltGr+]
+  - Ctl+Z
+  - Ctl+X
   - HOME
   - '['
   - '='
@@ -58,9 +58,9 @@ layers:
   - Sft+RET
   - {t: ▽, type: trans}
   - TAB
-  - Gui+RIGHT
+  - Ctl+RIGHT
   - Sft+-
-  - '-'
+  - RET
   - {t: ▽, type: trans}
   - '&mkp LCLK'
   - '&mkp MB5'
