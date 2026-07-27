@@ -1,3 +1,4 @@
+layout: {zmk_keyboard: sofle_ergomech}
 layers:
   default: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', ESC, Q, W, E, R, T, Y, U, I, O, P, BSPC, raise, A, S, D, F, G, H, J, K, L, ;, lower, LSHFT,
     Z, X, C, V, B, N, M, ',', ., /, RSHFT, MUTE, LCTRL, LALT, LGUI, RET, lower, raise, SPACE, RGUI, RALT, RCTRL, '&mkp LCLK', '&mkp MB5', PG UP, '&mkp MB4', PG DN]
@@ -30,8 +31,8 @@ layers:
   - '&ESC_M'
   - '&ESC_A'
   - '&ESC_B'
-  - Gui+ C
-  - Gui+ V
+  - Ctl+C
+  - Gui+V
   - BSPC
   - LEFT
   - DOWN
@@ -40,10 +41,10 @@ layers:
   - {t: '''', type: held}
   - {t: ▽, type: trans}
   - CAPS
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - Gui+ Z
-  - Gui+ X
+  - .
+  - AltGr+]
+  - Ctl+Z
+  - Ctl+X
   - HOME
   - '['
   - '='
@@ -54,12 +55,12 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Sft+ RET
+  - Sft+RET
   - {t: ▽, type: trans}
   - TAB
-  - Gui+ RIGHT
-  - Sft+ -
-  - '-'
+  - Ctl+RIGHT
+  - Sft+-
+  - RET
   - {t: ▽, type: trans}
   - '&mkp LCLK'
   - '&mkp MB5'
@@ -80,46 +81,46 @@ layers:
   - F11
   - F12
   - EP TOG
-  - Gui+ W
+  - {t: ▽, type: trans}
   - '&TAB_L'
-  - Gui+ T
+  - Ctl+T
   - '&TAB_R'
   - '&SCNSHOT'
   - PG UP
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '&mmv MOVE_UP'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - BT CLR
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Ctl+W
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - PG DN
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '&mmv MOVE_LEFT'
+  - '&mmv MOVE_DOWN'
+  - '&mmv MOVE_RIGHT'
+  - '&mkp RCLK'
   - {t: BT, h: '0'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - Ctl+N
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - Sft+ [
-  - Sft+ =
-  - Sft+ ]
-  - {t: ▽, type: trans}
+  - Sft+[
+  - Sft+=
+  - Sft+]
+  - '&mkp LCLK'
   - {t: BT, h: '1'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Sft+ RET
+  - Sft+RET
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
